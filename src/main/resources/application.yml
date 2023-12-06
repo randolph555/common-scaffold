@@ -37,7 +37,6 @@ spring:
       keepalive-time: 50000
       idle-timeout: 45000
       max-lifetime: 540000
-      connection-test-query: SELECT 1 FROM DUAL
 
 
 mybatis-plus:
@@ -53,7 +52,6 @@ mybatis-plus:
       logic-delete-field: delete_at
   #mapper xml映射路径
   mapper-locations: classpath*:mapper/**/*Mapper.xml
-
 
 
 

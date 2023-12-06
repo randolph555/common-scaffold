@@ -8,6 +8,7 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * P6spy日志实现
  * <p>
+ *
  * @see FormattedLogger
  */
 @Slf4j
@@ -26,7 +27,8 @@ public class P6spyLogger extends FormattedLogger {
     @Override
     public void logSQL(int connectionId, String now, long elapsed,
                        Category category, String prepared, String sql, String url) {
-        final String msg = strategy.formatMessage(connectionId, now, elapsed,
+        P6spyLogFormat format = new P6spyLogFormat();
+        final String msg = format.formatMessage(connectionId, now, elapsed,
                 category.toString(), prepared, sql, url);
 
         if (StringUtils.isEmpty(msg)) {

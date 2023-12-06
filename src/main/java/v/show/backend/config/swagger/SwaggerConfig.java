@@ -42,6 +42,10 @@ public class SwaggerConfig {
     }
 
 
+    /**
+     * 解决spring-boot-actuator与swagger冲突问题
+     * @return
+     */
     @Bean
     public static BeanPostProcessor springfoxHandlerProviderBeanPostProcessor() {
         return new BeanPostProcessor() {
